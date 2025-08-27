@@ -1,0 +1,10 @@
+# Voice Models Directory
+
+Place Piper TTS voice models here.
+
+Download from: https://github.com/rhasspy/piper/releases
+
+Recommended voices:
+- en_GB-alan-medium.onnx (British male)
+- en_US-amy-medium.onnx (US female)
+- en_US-ryan-medium.onnx (US male)
