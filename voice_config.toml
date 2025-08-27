@@ -29,7 +29,7 @@ speech_rate = 0.9  # Slightly slower for gravitas
 # Router MCP endpoint (exposed via mcp-proxy)
 endpoint = "http://127.0.0.1:8090/sse"
 # Timeout for MCP calls (seconds)
-timeout = 60  # Allow time for complex operations
+timeout = 600  # 10 minutes for complex MCP tool operations
 
 [voice]
 # Voice activity detection settings

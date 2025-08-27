@@ -115,7 +115,7 @@ speech_rate = 0.9  # 1.0 = normal, 0.8 = slower, 1.2 = faster
 [mcp]
 # MCP server endpoint
 endpoint = "http://127.0.0.1:8090/sse"
-timeout = 60  # Request timeout in seconds
+timeout = 600  # Request timeout in seconds (10 minutes for complex operations)
 
 [voice]
 # Voice activity detection settings
