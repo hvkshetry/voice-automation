@@ -1,0 +1,44 @@
+# Voice Automation Configuration
+# Simple config that sends everything to the LLM router
+
+[wake]
+# Wake phrase inspired by Hitchhiker's Guide to the Galaxy
+phrase = "deep thought"
+# Alternative phrases you can configure openWakeWord to recognize:
+# phrase = "hey deep thought"
+# phrase = "computer"
+
+[asr]
+# Faster-whisper model size (tiny, base, small, medium, large)
+# small = good balance of speed and accuracy
+# medium = better accuracy but slower
+model = "small"
+# Language for better recognition (optional)
+language = "en"
+
+[tts]
+# British male voice options for that Deep Thought feel:
+# en_GB-alan-medium.onnx - British male, clear articulation (recommended)
+# en_GB-northern_english_male-medium.onnx - Deeper northern accent
+# en_GB-semaine-medium.onnx - Another British option
+piper_voice = "voices/en_GB-alan-medium.onnx"
+# Speech rate (1.0 = normal, 0.8 = slower, 1.2 = faster)
+speech_rate = 0.9  # Slightly slower for gravitas
+
+[mcp]
+# Router MCP endpoint (exposed via mcp-proxy)
+endpoint = "http://127.0.0.1:8090/sse"
+# Timeout for MCP calls (seconds)
+timeout = 60  # Allow time for complex operations
+
+[voice]
+# Voice activity detection settings
+vad_threshold = 0.5  # Confidence threshold for speech detection
+silence_duration = 1.5  # Seconds of silence before considering speech complete
+max_recording_duration = 30  # Maximum recording length in seconds
+
+[system]
+# Audio device settings (optional, uses default if not specified)
+# input_device_index = 0  # Microphone device index
+# output_device_index = 0  # Speaker device index
+sample_rate = 16000  # Sample rate for audio
