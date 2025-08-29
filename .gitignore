@@ -10,11 +10,13 @@ venv/
 ENV/
 env/
 
-# Voice Models (large files)
+# Voice Models (large files - download separately)
 voices/*.onnx
+voices/*.onnx.json
 voices/*.bin
 voices/*.pt
 voices/*.pth
+voices/*.tar.gz
 !voices/.gitkeep
 
 # Model downloads
