@@ -1,0 +1,56 @@
+# Voice Automation Configuration
+# Multi-specialist system with direct access
+
+[bridge]
+url = "http://172.30.56.157:7000"  # WSL bridge service
+timeout = 180  # Increased from 30s to 3 minutes for long MCP operations
+
+[audio]
+sample_rate = 16000
+channels = 1
+chunk_duration = 0.08  # 80ms chunks = 1280 samples at 16kHz (OpenWakeWord's expected size)
+silence_threshold = 0.02
+silence_duration = 1.5
+max_recording_duration = 30.0
+
+# Wake word configurations
+# Using multiple wake phrases for different specialists
+
+[wake_words.alexa_router]
+model = "alexa" 
+threshold = 0.3
+two_stage_mode = true
+target = "router"
+response = "Yes?"
+
+[wake_words.hey_jarvis]
+model = "hey_jarvis" 
+threshold = 0.3
+two_stage_mode = true
+target = "office"
+response = "Yes?"
+
+# TTS Configuration
+[tts]
+enabled = true
+url = "http://localhost:7002"
+voice = "en_GB-alan-medium"  # Default to British male voice
+
+# Alternative voices
+[tts.voices]
+deep_thought = "en_GB-alan-medium"  # Stephen Fry-like
+office = "en_GB-jenny_dioco-medium"  # Professional female
+analyst = "en_US-joe-medium"  # Professional male
+
+# Email webhook settings
+[email]
+webhook_port = 5000
+client_state = "SecureRandomString123"  # Change this!
+subscription_renewal_hours = 60  # Renew every 2.5 days
+
+# Specialist routing
+[routing]
+default_specialist = "office"
+fallback_on_error = true
+log_conversations = true
+log_dir = "C:\\Users\\hvksh\\voice-automation\\logs"
