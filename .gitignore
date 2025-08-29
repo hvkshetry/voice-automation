@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Voice Models (large files)
+voices/*.onnx
+voices/*.bin
+voices/*.pt
+voices/*.pth
+!voices/.gitkeep
+
+# Model downloads
+models/
+*.safetensors
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+temp/
+
+# Audio recordings (privacy)
+recordings/
+*.wav
+*.mp3
+*.ogg
+
+# Configuration overrides
+voice_config.local.toml
+config.local.toml
